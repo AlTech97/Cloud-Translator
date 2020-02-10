@@ -1,0 +1,16 @@
+C:\Users\lucag\source\repos\mio traduttore 2\mio traduttore 2\obj\Debug\mio traduttore 2.csprojAssemblyReference.cache
+C:\Users\lucag\source\repos\mio traduttore 2\mio traduttore 2\obj\Debug\MainWindow.g.cs
+C:\Users\lucag\source\repos\mio traduttore 2\mio traduttore 2\obj\Debug\App.g.cs
+C:\Users\lucag\source\repos\mio traduttore 2\mio traduttore 2\obj\Debug\mio traduttore 2_MarkupCompile.cache
+C:\Users\lucag\source\repos\mio traduttore 2\mio traduttore 2\obj\Debug\mio traduttore 2_MarkupCompile.lref
+C:\Users\lucag\source\repos\mio traduttore 2\mio traduttore 2\bin\Debug\mio traduttore 2.exe.config
+C:\Users\lucag\source\repos\mio traduttore 2\mio traduttore 2\bin\Debug\mio traduttore 2.exe
+C:\Users\lucag\source\repos\mio traduttore 2\mio traduttore 2\bin\Debug\mio traduttore 2.pdb
+C:\Users\lucag\source\repos\mio traduttore 2\mio traduttore 2\bin\Debug\Newtonsoft.Json.dll
+C:\Users\lucag\source\repos\mio traduttore 2\mio traduttore 2\obj\Debug\MainWindow.baml
+C:\Users\lucag\source\repos\mio traduttore 2\mio traduttore 2\obj\Debug\mio traduttore 2.g.resources
+C:\Users\lucag\source\repos\mio traduttore 2\mio traduttore 2\obj\Debug\mio_traduttore_2.Properties.Resources.resources
+C:\Users\lucag\source\repos\mio traduttore 2\mio traduttore 2\obj\Debug\mio traduttore 2.csproj.GenerateResource.cache
+C:\Users\lucag\source\repos\mio traduttore 2\mio traduttore 2\obj\Debug\mio traduttore 2.csproj.CopyComplete
+C:\Users\lucag\source\repos\mio traduttore 2\mio traduttore 2\obj\Debug\mio traduttore 2.exe
+C:\Users\lucag\source\repos\mio traduttore 2\mio traduttore 2\obj\Debug\mio traduttore 2.pdb
