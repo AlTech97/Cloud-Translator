@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "attività-mio traduttore 2",
+      "appliesTo": "Downloads/traduttore/traduttore/mio traduttore 2/",
+      "type": "launch"
+    }
+  ]
+}
