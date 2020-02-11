@@ -319,6 +319,7 @@ namespace mio_traduttore_2
                 immagine.Source = bitmapImage;
                 
                 TextToTranslate.Text= await MakeRequest2(opnfd.FileName);
+                TranslateButton_Click(sender, e);
             }
 
 
@@ -412,7 +413,7 @@ namespace mio_traduttore_2
                     try
                     {
                         
-                        tentativo = String.Concat(tentativo, " ", result["recognitionResults"][0]["lines"][i]["text"]);
+                        tentativo = String.Concat(tentativo, " \n", result["recognitionResults"][0]["lines"][i]["text"]);
                        
                     }
                     catch
@@ -572,6 +573,119 @@ namespace mio_traduttore_2
                 }
             }
             File.Delete(@"C:\Users\lucag\Desktop\system_recorded_audio.wav");
+        }
+        private async void TranslateButton_Click2(String text)
+        {
+            
+
+            string fromLanguage = FromLanguageComboBox.SelectedValue.ToString();
+            string fromLanguageCode;
+
+            // Auto-detect source language if requested
+            if (fromLanguage == "Detect")
+            {
+                fromLanguageCode = DetectLanguage(text);
+                if (!languageCodes.Contains(fromLanguageCode))
+                {
+                    MessageBox.Show("The source language could not be detected automatically " +
+                        "or is not supported for translation.", "Language detection failed",
+                        MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+            }
+            else
+                fromLanguageCode = languageCodesAndTitles[fromLanguage];
+
+            string toLanguageCode = languageCodesAndTitles[ToLanguageComboBox.SelectedValue.ToString()];
+
+            // Spell-check the source text if the source language is English
+            if (fromLanguageCode == "en")
+            {
+                if (text.StartsWith("-"))    // don't spell check in this case
+                    text = text.Substring(1);
+                else
+                {
+                    text = CorrectSpelling(text);
+                        // put corrected text into input field
+                }
+            }
+
+            // Handle null operations: no text or same source/target languages
+            if (text == "" || fromLanguageCode == toLanguageCode)
+            {
+                TranslatedTextLabel.Content = text;
+                return;
+            }
+
+            // Send translation request
+            string endpoint = string.Format(TEXT_TRANSLATION_API_ENDPOINT, "translate");
+            string uri = string.Format(endpoint + "&from={0}&to={1}", fromLanguageCode, toLanguageCode);
+
+            System.Object[] body = new System.Object[] { new { Text = text } };
+            var requestBody = JsonConvert.SerializeObject(body);
+
+            using (var client = new HttpClient())
+            using (var request = new HttpRequestMessage())
+            {
+                request.Method = HttpMethod.Post;
+                request.RequestUri = new Uri(uri);
+                request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
+                request.Headers.Add("Ocp-Apim-Subscription-Key", COGNITIVE_SERVICES_KEY);
+                request.Headers.Add("Ocp-Apim-Subscription-Region", "westeurope");
+                request.Headers.Add("X-ClientTraceId", Guid.NewGuid().ToString());
+
+                var response = await client.SendAsync(request);
+                var responseBody = await response.Content.ReadAsStringAsync();
+
+                var result = JsonConvert.DeserializeObject<List<Dictionary<string, List<Dictionary<string, string>>>>>(responseBody);
+                var translation = result[0]["translations"][0]["text"];
+
+                // Update the translation field
+                translateDocument( translation);
+            }
+            detectedLanguage = ToLanguageComboBox.SelectedItem.ToString();
+        }
+        private void translateDocument(string txt) {
+            string docPath =
+              Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+            // Write the string array to a new file named "WriteLines.txt".
+            String title = "DocumentTradotto.txt";
+            int n = 0;
+            while(File.Exists(Path.Combine(docPath, title))){
+                n++;
+                title= "DocumentoTradotto("+n+").txt";
+                
+            }
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, title)))
+            {
+
+                outputFile.Write(txt);
+            }
+        }
+        private async void button2_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog opnfd = new OpenFileDialog();
+            opnfd.Filter = "Image Files (*.jpg;*.jpeg;.*.gif;)|*.jpg;*.jpeg;.*.gif|"+ "Pdf Files|*.pdf";
+            //Pdf Files|*.pdf
+            if (opnfd.ShowDialog() != false)
+            {
+                Console.Out.WriteLine(opnfd.FileName);
+                BitmapImage bitmapImage = new BitmapImage();
+                bitmapImage.UriSource = new Uri(opnfd.FileName);
+                immagine.Source = bitmapImage;
+
+                //TextToTranslate.Text = await MakeRequest2(opnfd.FileName);
+                TranslateButton_Click2(await MakeRequest2(opnfd.FileName));
+            }
+        }
+
+        private void Log(object sender, RoutedEventArgs e)
+        {
+
+            var log = new Window1();
+            log.Show();
+            this.Close();
         }
 
         // Redefine the capturer instance with a new instance of the LoopbackCapture class

@@ -52,14 +52,16 @@ C:\Users\lucag\source\repos\Traduttoregit\Downloads\traduttore\traduttore\mio tr
 C:\Users\lucag\source\repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\bin\x86\Debug\NAudio.xml
 C:\Users\lucag\source\repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\bin\x86\Debug\Newtonsoft.Json.xml
 C:\Users\lucag\source\repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x86\Debug\mio traduttore 2.csprojAssemblyReference.cache
-C:\Users\lucag\source\repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x86\Debug\MainWindow.g.cs
 C:\Users\lucag\source\repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x86\Debug\App.g.cs
 C:\Users\lucag\source\repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x86\Debug\mio traduttore 2_MarkupCompile.cache
 C:\Users\lucag\source\repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x86\Debug\mio traduttore 2_MarkupCompile.lref
-C:\Users\lucag\source\repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x86\Debug\MainWindow.baml
 C:\Users\lucag\source\repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x86\Debug\mio traduttore 2.g.resources
 C:\Users\lucag\source\repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x86\Debug\mio_traduttore_2.Properties.Resources.resources
 C:\Users\lucag\source\repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x86\Debug\mio traduttore 2.csproj.GenerateResource.cache
 C:\Users\lucag\source\repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x86\Debug\mio traduttore 2.csproj.CopyComplete
 C:\Users\lucag\source\repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x86\Debug\mio traduttore 2.exe
 C:\Users\lucag\source\repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x86\Debug\mio traduttore 2.pdb
+C:\Users\lucag\source\repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x86\Debug\Login.g.cs
+C:\Users\lucag\source\repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x86\Debug\Login.baml
+C:\Users\lucag\source\repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x86\Debug\MainWindow.g.cs
+C:\Users\lucag\source\repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x86\Debug\MainWindow.baml
