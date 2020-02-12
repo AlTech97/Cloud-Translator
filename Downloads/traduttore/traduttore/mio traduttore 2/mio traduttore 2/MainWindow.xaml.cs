@@ -59,6 +59,7 @@ namespace mio_traduttore_2
         public static bool alreadyRecording = false, stopRecording = false;
         public static string textDetected, detectedLanguage, fromLanguage,toLanguage;
         private Cronologia cache;
+        ArrayList appoggio;
         // Dictionary to map language codes from friendly name (sorted case-insensitively on language name)antonio@libero.it antopassword
         private SortedDictionary<string, string> languageCodesAndTitles =
             new SortedDictionary<string, string>(Comparer<string>.Create((a, b) => string.Compare(a, b, true)));
@@ -81,6 +82,7 @@ namespace mio_traduttore_2
             AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(HandleExceptions);
             email = mail;
             psw = password;
+            
             if (email != null)
             {
                 cache = new Cronologia(email);
@@ -131,6 +133,7 @@ namespace mio_traduttore_2
             // Set default languages
             FromLanguageComboBox.SelectedItem = "Detect";
             ToLanguageComboBox.SelectedItem = "Italian";
+            appoggio = cache.getCronologia();
         }
 
         // ***** DETECT LANGUAGE OF TEXT TO BE TRANSLATED
@@ -710,13 +713,22 @@ namespace mio_traduttore_2
 
         private void TextToTranslate_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
-            ArrayList appoggio = cache.getCronologia();
+
+            Cronologia.Items.Clear();
+            /* while (Cronologia.Items.Count > 1)
+             {
+                 Cronologia.Items.Remove(0);
+             }*/
+
+            
             foreach (String [] a in appoggio)
             {
+                
                 Console.WriteLine(a[0]+""+a[1]);
+                if(a[0].Contains(TextToTranslate.Text))
                 if (Cronologia.Items.Count <= 4)
                 {
-                    Cronologia.Items.Add(a[1]);
+                    Cronologia.Items.Add(a[0]+" = "+a[1]);
                     Cronologia.MinHeight = Cronologia.Items.Count * 23;
                 }
             }
