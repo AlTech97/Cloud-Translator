@@ -44,7 +44,7 @@ namespace mio_traduttore_2
         {
             pswd = sender.ToString();
             i = pswd.IndexOf(' ');  //trova l'occorrenza dello spazio nella stringa
-            i++;                       //incremento i per portarlo al valore che ci serve
+            i++;                       //incremento i pxer portarlo al valore che ci serve
             pswd = pswd.Substring(i);   //pswd ora contiene solo la password
         }
 
