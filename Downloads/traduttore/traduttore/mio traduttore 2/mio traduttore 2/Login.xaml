@@ -14,13 +14,13 @@
         </Grid.ColumnDefinitions>
 
         <Label x:Name="label" Content="Log-in" HorizontalAlignment="Left" Margin="29.888,6,0,0" VerticalAlignment="Top" Height="49" FontSize="26.667" Grid.ColumnSpan="2" Grid.Column="1"/>
-        <TextBox x:Name="EmailText" HorizontalAlignment="Left" Height="23" Margin="29.888,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" FontSize="14" TabIndex="3" Grid.ColumnSpan="2" Grid.Column="1" TextChanged="EmailText_TextChanged"/>
+        <TextBox x:Name="EmailText" HorizontalAlignment="Left" Height="23" Margin="29.888,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" FontSize="14" TabIndex="3" Grid.ColumnSpan="2" Grid.Column="1" TextChanged="EmailText_TextChanged" Text="antonio@libero.it"/>
         <Label x:Name="PasswordLabel" Content="Password:" HorizontalAlignment="Left" Margin="30.888,115,0,0" VerticalAlignment="Top" FontSize="14" Grid.ColumnSpan="2" Grid.Column="1"/>
 
         <Button x:Name="LoginButton" Content="LogIn" HorizontalAlignment="Left" Margin="29.888,206,0,0" VerticalAlignment="Top" Width="114" Height="31" Click="LogIn" FontSize="14" TabIndex="4" IsDefault="True" Grid.ColumnSpan="2" Grid.Column="1"/>
 
         <Label x:Name="EmailLabel" Content=" E-mail:" HorizontalAlignment="Left" Margin="30.888,58,0,0" VerticalAlignment="Top" FontSize="14" Grid.Column="1"/>
-        <TextBox x:Name="PasswordText" HorizontalAlignment="Left" Height="23" Margin="30.888,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" FontSize="14" TabIndex="3" RenderTransformOrigin="0.51,2.423" Grid.ColumnSpan="2" Grid.Column="1" TextChanged="PasswordText_TextChanged"/>
+        <TextBox x:Name="PasswordText" HorizontalAlignment="Left" Height="23" Margin="30.888,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" FontSize="14" TabIndex="3" RenderTransformOrigin="0.51,2.423" Grid.ColumnSpan="2" Grid.Column="1" TextChanged="PasswordText_TextChanged" Text="antopassword"/>
         <Label x:Name="error" Content="" HorizontalAlignment="Left" Margin="31,172,0,0" VerticalAlignment="Top" FontSize="14" Grid.ColumnSpan="2" Grid.Column="1" Width="229"/>
 
     </Grid>

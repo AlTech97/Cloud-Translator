@@ -713,6 +713,7 @@ namespace mio_traduttore_2
             ArrayList appoggio = cache.getCronologia();
             foreach (String [] a in appoggio)
             {
+                Console.WriteLine(a[0]+""+a[1]);
                 if (Cronologia.Items.Count <= 4)
                 {
                     Cronologia.Items.Add(a[1]);

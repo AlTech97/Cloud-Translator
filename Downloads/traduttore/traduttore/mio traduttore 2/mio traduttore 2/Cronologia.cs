@@ -61,11 +61,14 @@ namespace mio_traduttore_2
             //salva i risultati della query in una matrice e restituiscila
             while(dreader.Read())
             {
+                riga = new String[2];
                 riga[0] = (String) dreader.GetValue(0); //da tradurre
                 riga[1] = (String)dreader.GetValue(1);    //tradotto
+               
                 risultato.Add(riga);
 
             }
+            
             return risultato;
         }
        
