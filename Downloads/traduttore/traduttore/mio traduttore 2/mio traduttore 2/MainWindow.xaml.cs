@@ -58,20 +58,34 @@ namespace mio_traduttore_2
         public string Testo,email,psw;
         public static bool alreadyRecording = false, stopRecording = false;
         public static string textDetected, detectedLanguage, fromLanguage,toLanguage;
-        // Dictionary to map language codes from friendly name (sorted case-insensitively on language name)
+        private Cronologia cache;
+        // Dictionary to map language codes from friendly name (sorted case-insensitively on language name)antonio@libero.it antopassword
         private SortedDictionary<string, string> languageCodesAndTitles =
             new SortedDictionary<string, string>(Comparer<string>.Create((a, b) => string.Compare(a, b, true)));
-        public MainWindow(String mail,String password) {
+        /*public MainWindow(String mail,String password) {
             email = mail;
             psw = password;
+            
             var win = new MainWindow();
             win.Show();
+        }*/
+        public MainWindow() {
+            AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(HandleExceptions);
+            var log = new Window1();
+            log.Show();
+            this.Close();
         }
-        public MainWindow()
+        public MainWindow(String mail, String password)
         {
             // at least show an error dialog if there's an unexpected error
             AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(HandleExceptions);
-
+            email = mail;
+            psw = password;
+            if (email != null)
+            {
+                cache = new Cronologia(email);
+                Console.WriteLine(email);
+            }
             if (COGNITIVE_SERVICES_KEY.Length != 32)
             {
                 MessageBox.Show("One or more invalid API subscription keys.\n\n" +
@@ -696,16 +710,24 @@ namespace mio_traduttore_2
 
         private void TextToTranslate_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
-            Cronologia.Items.Add(TextToTranslate.Text);
+            ArrayList appoggio = cache.getCronologia();
+            foreach (String [] a in appoggio)
+            {
+                if (Cronologia.Items.Count <= 4)
+                {
+                    Cronologia.Items.Add(a[1]);
+                    Cronologia.MinHeight = Cronologia.Items.Count * 23;
+                }
+            }
+            
             Console.WriteLine(Cronologia.Height);
-            if(Cronologia.Items.Count<4)
-            Cronologia.MinHeight= Cronologia.Items.Count * 23;
+            Console.WriteLine(cache);
             
          UpdateLayout();
             
             // TextToTranslate.text;
         }
-
+     
         private void PrintText(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             TextToTranslate.Text = Cronologia.SelectedItem.ToString();

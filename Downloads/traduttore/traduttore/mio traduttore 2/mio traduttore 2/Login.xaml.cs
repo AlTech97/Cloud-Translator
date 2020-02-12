@@ -112,8 +112,8 @@ namespace mio_traduttore_2
 
         private void Switch()
         {       //PASSARE LE VARIABILI USR E PSWD AL MAIN WINDOW
-           new MainWindow(EmailText.Text,PasswordText.Text);
-            
+           var a=new MainWindow(EmailText.Text,PasswordText.Text);
+            a.Show();
             this.Close();
         }
     }

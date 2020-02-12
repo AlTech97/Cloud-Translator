@@ -13,7 +13,7 @@ namespace mio_traduttore_2
 
         public Cronologia(String e)
         {
-            email = String.Copy(e);
+            email = e;
         }
 
         public ArrayList getCronologia()
