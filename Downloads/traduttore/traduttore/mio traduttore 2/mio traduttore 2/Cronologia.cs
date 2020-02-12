@@ -50,7 +50,7 @@ namespace mio_traduttore_2
 
             // Seleziona il testo da tradurre e il testo tradotto dall'utente (identificato con email)
             //e ordina i risultati dal più recente al meno recente
-            sql = "SELECT DaTradurre, Tradotto FROM Cronologia WHERE Email = "+ email +" ORDER BY timestmp DESC";
+            sql = "SELECT DaTradurre, Tradotto FROM Cronologia WHERE Email = '"+ email +"' ORDER BY timestmp DESC";
 
             // to execute the sql statement 
             cmd = new SqlCommand(sql, conn);
