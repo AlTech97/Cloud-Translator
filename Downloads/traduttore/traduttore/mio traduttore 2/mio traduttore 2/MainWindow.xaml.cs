@@ -36,6 +36,7 @@ using System.Threading.Tasks;
 using Microsoft.CognitiveServices.Speech;
 using Microsoft.CognitiveServices.Speech.Audio;
 using Microsoft.CognitiveServices.Speech.Translation;
+using System.Windows.Controls;
 
 namespace mio_traduttore_2
 {
@@ -54,13 +55,18 @@ namespace mio_traduttore_2
         const string BING_SPELL_CHECK_API_ENDPOINT = "https://westeurope.api.cognitive.microsoft.com/bing/v7.0/spellcheck/";
         // An array of language codes
         private string[] languageCodes;
-        public string Testo;
+        public string Testo,email,psw;
         public static bool alreadyRecording = false, stopRecording = false;
         public static string textDetected, detectedLanguage, fromLanguage,toLanguage;
         // Dictionary to map language codes from friendly name (sorted case-insensitively on language name)
         private SortedDictionary<string, string> languageCodesAndTitles =
             new SortedDictionary<string, string>(Comparer<string>.Create((a, b) => string.Compare(a, b, true)));
-
+        public MainWindow(String mail,String password) {
+            email = mail;
+            psw = password;
+            var win = new MainWindow();
+            win.Show();
+        }
         public MainWindow()
         {
             // at least show an error dialog if there's an unexpected error
@@ -686,6 +692,23 @@ namespace mio_traduttore_2
             var log = new Window1();
             log.Show();
             this.Close();
+        }
+
+        private void TextToTranslate_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            Cronologia.Items.Add(TextToTranslate.Text);
+            Console.WriteLine(Cronologia.Height);
+            if(Cronologia.Items.Count<4)
+            Cronologia.MinHeight= Cronologia.Items.Count * 23;
+            
+         UpdateLayout();
+            
+            // TextToTranslate.text;
+        }
+
+        private void PrintText(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            TextToTranslate.Text = Cronologia.SelectedItem.ToString();
         }
 
         // Redefine the capturer instance with a new instance of the LoopbackCapture class

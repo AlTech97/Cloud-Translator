@@ -21,6 +21,7 @@
 
         <Label x:Name="EmailLabel" Content=" E-mail:" HorizontalAlignment="Left" Margin="30.888,58,0,0" VerticalAlignment="Top" FontSize="14" Grid.Column="1"/>
         <TextBox x:Name="PasswordText" HorizontalAlignment="Left" Height="23" Margin="30.888,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" FontSize="14" TabIndex="3" RenderTransformOrigin="0.51,2.423" Grid.ColumnSpan="2" Grid.Column="1" TextChanged="PasswordText_TextChanged"/>
+        <Label x:Name="error" Content="" HorizontalAlignment="Left" Margin="31,172,0,0" VerticalAlignment="Top" FontSize="14" Grid.ColumnSpan="2" Grid.Column="1" Width="229"/>
 
     </Grid>
 </Window>

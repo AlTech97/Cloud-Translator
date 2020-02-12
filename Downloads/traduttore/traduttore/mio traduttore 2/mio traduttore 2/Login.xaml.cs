@@ -95,6 +95,10 @@ namespace mio_traduttore_2
                 {
                     Console.WriteLine("USERNAME E PASSWORD CORRETTI, FAI IL REDIRECT");
                     Switch();
+                    dreader.Close();
+                    cmd.Dispose();
+                    conn.Close();
+                    return;
                 }
             }
 
@@ -102,14 +106,14 @@ namespace mio_traduttore_2
             dreader.Close();
             cmd.Dispose();
             conn.Close();
-
+            error.Content = "USERNAME O PASSWORD ERRATI!";
             Console.WriteLine("USERNAME O PASSWORD ERRATI!");
         }
 
         private void Switch()
         {       //PASSARE LE VARIABILI USR E PSWD AL MAIN WINDOW
-            var win = new MainWindow();
-            win.Show();
+           new MainWindow(EmailText.Text,PasswordText.Text);
+            
             this.Close();
         }
     }
