@@ -705,6 +705,8 @@ namespace mio_traduttore_2
             {
 
                 outputFile.Write(txt);
+                var str= Encoding.UTF8.GetBytes(txt);
+                Console.WriteLine(Encoding.UTF8.GetString(str));
             }
         }
         private async void button2_Click(object sender, RoutedEventArgs e)
@@ -936,6 +938,26 @@ namespace mio_traduttore_2
                 }
             }
         }
+        /*public static string StringToBinary(string data)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            foreach (char c in data.ToCharArray())
+            {
+                sb.Append(Convert.ToString(c, 2).PadLeft(8, '0'));
+            }
+            return sb.ToString();
+        }
+        public static string BinaryToString(string data)
+        {
+            List<Byte> byteList = new List<Byte>();
+
+            for (int i = 0; i < data.Length; i += 8)
+            {
+                byteList.Add(Convert.ToByte(data.Substring(i, 8), 2));
+            }
+            return Encoding.ASCII.GetString(byteList.ToArray());
+        }*/
     }
        
     }
