@@ -55,13 +55,13 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Button x:Name="Button_ascolta"  HorizontalAlignment="Left" Margin="460,316,0,0" VerticalAlignment="Top" Width="34" Height="31" Click="ascolta" FontSize="14" TabIndex="4" IsDefault="True">
+        <Button x:Name="Button_ascolta"  HorizontalAlignment="Left" Margin="460,316,0,0" VerticalAlignment="Top" Width="34" Height="31" Click="ascolta" FontSize="14" TabIndex="4" IsDefault="True" BorderBrush="#FF4AA4FF">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
-            <Image Source="C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\audio.png" Height="26" OpacityMask="Black"></Image>
+            <Image Source="C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\audio.png" Height="26" OpacityMask="{DynamicResource {x:Static SystemColors.HotTrackBrushKey}}"></Image>
         </Button>
         <Button x:Name="Button_startRecord" HorizontalAlignment="Left" Margin="525,316,0,0" VerticalAlignment="Top" Width="34" Height="31" Click="textToSpeech" FontSize="14" TabIndex="4" IsDefault="True">
             <Button.Resources>
@@ -71,7 +71,7 @@
             </Button.Resources>
             <Image Source="C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mic.png"></Image>
         </Button>
-        <Button x:Name="Button_stopRecord" HorizontalAlignment="Left" Margin="525,316,0,0" VerticalAlignment="Top" Width="34" Height="31" Click="textToSpeech" FontSize="14" TabIndex="4" IsDefault="True">
+        <Button x:Name="Button_stopRecord" HorizontalAlignment="Left" Margin="525,316,0,0" VerticalAlignment="Top" Width="34" Height="31" Click="textToSpeech" FontSize="14" TabIndex="4" IsDefault="True" BorderBrush="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
@@ -79,7 +79,7 @@
             </Button.Resources>
             <Image Source="C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\stop.png"></Image>
         </Button>
-        <Button x:Name="ButtonSpeech" Content="Car" HorizontalAlignment="Left" Margin="585,316,0,0" VerticalAlignment="Top" Width="26" Height="31" Click="Parla" FontSize="14" TabIndex="4" IsDefault="True" RenderTransformOrigin="2.357,0.951">
+        <Button x:Name="ButtonSpeech" Content="Car" HorizontalAlignment="Left" Margin="585,316,0,0" VerticalAlignment="Top" Width="26" Height="31" Click="Parla" FontSize="14" TabIndex="4" IsDefault="True" RenderTransformOrigin="2.357,0.951" BorderBrush="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
@@ -93,7 +93,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="login" Content="Log" HorizontalAlignment="Left" Margin="634,316,0,0" VerticalAlignment="Top" Width="26" Height="31" Click="Log" FontSize="14" TabIndex="4" IsDefault="True" RenderTransformOrigin="2.357,0.951">
+        <Button x:Name="login" Content="Log" HorizontalAlignment="Left" Margin="634,316,0,0" VerticalAlignment="Top" Width="26" Height="31" Click="Log" FontSize="14" TabIndex="4" IsDefault="True" RenderTransformOrigin="2.357,0.951" BorderBrush="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
