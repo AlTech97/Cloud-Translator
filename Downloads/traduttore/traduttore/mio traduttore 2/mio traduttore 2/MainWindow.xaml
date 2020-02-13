@@ -29,12 +29,7 @@
                 HorizontalAlignment="Left"
                 Margin="306,88,0,0"
                 VerticalAlignment="Top"
-                Width="175" FontSize="14" TabIndex="2" Cursor="None">
-            <ComboBox.Background>
-                <ImageBrush/>
-            </ComboBox.Background>
-
-        </ComboBox>
+                Width="175" FontSize="14" TabIndex="2" Cursor="None" Background="Black" BorderBrush="#FF4AA4FF" BorderThickness="1"/>
         <Label x:Name="fromLabel" Content="Translate from:" HorizontalAlignment="Left" Margin="40,58,0,0" VerticalAlignment="Top" FontSize="14"/>
         <ComboBox x:Name="FromLanguageComboBox"
             HorizontalAlignment="Left"
