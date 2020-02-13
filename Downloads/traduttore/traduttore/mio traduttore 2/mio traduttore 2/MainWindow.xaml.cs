@@ -326,9 +326,30 @@ namespace mio_traduttore_2
                 // Update the translation field
                 TranslatedTextLabel.Content = translation;
             }
+            controlCache(TextToTranslate.Text);
             detectedLanguage = ToLanguageComboBox.SelectedItem.ToString();
         }
+        public void controlCache(String a) {
+            int flag = 0;
+            foreach (String[] b in appoggio)
+            {
 
+                //Console.WriteLine(a[0] + "" + a[1]);
+                
+                if (b[0].Equals(a))
+                {
+                    flag = 1;
+                }
+                    
+            }
+            if (flag == 0) {
+                string[] s = new string[2];
+                s[0] = a;
+                s[1]=TranslatedTextLabel.Content.ToString();
+
+                appoggio.Insert(0, s);
+            }
+            }
         private async void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog opnfd = new OpenFileDialog();
@@ -715,25 +736,27 @@ namespace mio_traduttore_2
         {
 
             Cronologia.Items.Clear();
+            
             /* while (Cronologia.Items.Count > 1)
              {
                  Cronologia.Items.Remove(0);
              }*/
 
-            
+
             foreach (String [] a in appoggio)
             {
-                
+                Cronologia.MinHeight = Cronologia.Items.Count * 23;
+
                 Console.WriteLine(a[0]+""+a[1]);
                 if(a[0].Contains(TextToTranslate.Text))
                 if (Cronologia.Items.Count <= 4)
                 {
-                    Cronologia.Items.Add(a[0]+" = "+a[1]);
+                    Cronologia.Items.Add(a[0]);
                     Cronologia.MinHeight = Cronologia.Items.Count * 23;
                 }
             }
             
-            Console.WriteLine(Cronologia.Height);
+            
             Console.WriteLine(cache);
             
          UpdateLayout();
@@ -743,7 +766,13 @@ namespace mio_traduttore_2
      
         private void PrintText(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            TextToTranslate.Text = Cronologia.SelectedItem.ToString();
+            try
+            {
+                Console.WriteLine(Cronologia.SelectedItem.ToString());
+                string app = Cronologia.SelectedItem.ToString();
+                TextToTranslate.Text = app;
+            }
+            catch { }
         }
 
         // Redefine the capturer instance with a new instance of the LoopbackCapture class
