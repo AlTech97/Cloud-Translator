@@ -9,7 +9,7 @@
         Title="Cloud Translator" Height="521.3" Width="700" >
 
     <Grid>
-        <Image Source="C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\cloud.png"  HorizontalAlignment="Left" Margin="25,0,0,0" VerticalAlignment="Top" Width="" Height="70" RenderTransformOrigin="0.5,0.5"/>
+        <Image Source="C:\Users\Fulvio\source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\cloud.png"  HorizontalAlignment="Left" Margin="25,0,0,0" VerticalAlignment="Top" Width="100" Height="70" RenderTransformOrigin="0.5,0.5"/>
         <Label x:Name="label" Content="Cloud Translator" HorizontalAlignment="Left" Margin="246,9,0,0" VerticalAlignment="Top" Height="49" FontSize="26.667"/>
         <TextBox x:Name="TextToTranslate" HorizontalAlignment="Left" Height="41" Margin="42,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="600" FontSize="14" TabIndex="3" TextChanged="TextToTranslate_TextChanged"/>
         <Label x:Name="CronologiaLabel" Margin="42,206,50,232">

@@ -25,3 +25,29 @@ C:\Users\Fulvio\Google Drive\Magistrale\Cloud computing\Progetto\mio traduttore 
 C:\Users\Fulvio\Google Drive\Magistrale\Cloud computing\Progetto\mio traduttore 2 (2)\mio traduttore 2\mio traduttore 2\obj\x64\Debug\mio traduttore 2.pdb
 C:\Users\Fulvio\Google Drive\Magistrale\Cloud computing\Progetto\mio traduttore 2 (2)\mio traduttore 2\mio traduttore 2\bin\x64\Debug\NAudio.dll
 C:\Users\Fulvio\Google Drive\Magistrale\Cloud computing\Progetto\mio traduttore 2 (2)\mio traduttore 2\mio traduttore 2\bin\x64\Debug\NAudio.xml
+C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\bin\x64\Debug\Microsoft.CognitiveServices.Speech.core.dll
+C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\bin\x64\Debug\Microsoft.CognitiveServices.Speech.extension.kws.dll
+C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\bin\x64\Debug\mio traduttore 2.exe.config
+C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\bin\x64\Debug\mio traduttore 2.exe
+C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\bin\x64\Debug\mio traduttore 2.pdb
+C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\bin\x64\Debug\Microsoft.CognitiveServices.Speech.csharp.dll
+C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\bin\x64\Debug\NAudio.dll
+C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\bin\x64\Debug\Newtonsoft.Json.dll
+C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\bin\x64\Debug\Microsoft.CognitiveServices.Speech.csharp.xml
+C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\bin\x64\Debug\NAudio.xml
+C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\bin\x64\Debug\Newtonsoft.Json.xml
+C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x64\Debug\mio traduttore 2.csprojAssemblyReference.cache
+C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x64\Debug\MainWindow.g.cs
+C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x64\Debug\Login.g.cs
+C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x64\Debug\App.g.cs
+C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x64\Debug\mio traduttore 2_MarkupCompile.cache
+C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x64\Debug\mio traduttore 2_MarkupCompile.lref
+C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x64\Debug\MainWindow.baml
+C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x64\Debug\Login.baml
+C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x64\Debug\mio traduttore 2.g.resources
+C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x64\Debug\mio_traduttore_2.Properties.Resources.resources
+C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x64\Debug\mio traduttore 2.csproj.GenerateResource.cache
+C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x64\Debug\mio traduttore 2.csproj.CoreCompileInputs.cache
+C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x64\Debug\mio traduttore 2.csproj.CopyComplete
+C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x64\Debug\mio traduttore 2.exe
+C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mio traduttore 2\obj\x64\Debug\mio traduttore 2.pdb
