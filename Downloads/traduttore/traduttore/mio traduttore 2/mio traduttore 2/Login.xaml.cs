@@ -21,47 +21,25 @@ namespace mio_traduttore_2
     /// </summary>
     public partial class Window1 : Window
     {
-        string pswd, usr;
-        int i, j;
+        private string pswd, usr;
+
+        private string constr;
+
+        // use to perform read and write operations in the database 
+        private SqlCommand cmd;
+
+        //use to read a row in table one by one
+        private SqlDataReader dreader;
+
+        // for the connection to 
+        // sql server database 
+        private SqlConnection conn;
+
+        // to sore SQL command and the output of SQL command 
+        private string sql;
 
         public Window1()
         {
-            InitializeComponent();
-        }
-
-        //salva l'email inserita nella form in una variabile
-        private void EmailText_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            usr = sender.ToString();
-            j = usr.IndexOf(' ');  //trova l'occorrenza dello spazio nella stringa
-            j++;
-            usr = usr.Substring(j);   //usr ora contiene solo l'email dello user
-
-        }
-
-        //salva la pass inserita nella form in una variabile
-        private void PasswordText_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            pswd = sender.ToString();
-            i = pswd.IndexOf(' ');  //trova l'occorrenza dello spazio nella stringa
-            i++;                       //incremento i per portarlo al valore che ci serve
-            pswd = pswd.Substring(i);   //pswd ora contiene solo la password
-        }
-
-        private void SignInButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void LogIn(object sender, RoutedEventArgs e)
-        {
-            
-            string constr;
-
-            // for the connection to 
-            // sql server database 
-            SqlConnection conn;
-
             // Data Source is the name of the 
             // server on which the database is stored. 
             // The Initial Catalog is used to specify 
@@ -73,16 +51,71 @@ namespace mio_traduttore_2
 
             conn = new SqlConnection(constr);
 
+            InitializeComponent();
+        }
+
+        private void SignInButton_Click(object sender, RoutedEventArgs e)
+        {
+            SelectUser();
+            while (dreader.Read())  //controlla nel DB che l'utente non sia già registrato controllando la sua mail
+            {
+                if (dreader.GetValue(0).Equals(usr))
+                {
+                    error.Content = "UTENTE GIA' REGISTRATO";
+                    return;
+
+                }
+            }
+            //superati i controlli nel DB, inserisci il nuovo utente
+            dreader.Close();
+            sql = "INSERT INTO Utente (Email, Password) VALUES('"+ usr +"', '"+ pswd +"');";
+
+            // to execute the sql statement 
+            cmd = new SqlCommand(sql, conn);
+
+            cmd.ExecuteNonQuery();
+
+            error.Content = "REGISTRATO, ACCEDI AI SERVIZI";
+
+            conn.Close();
+        }
+
+        private void LogIn(object sender, RoutedEventArgs e)
+        {
+            SelectUser();
+            // for one by one reading row 
+            while (dreader.Read())
+            {
+                if (dreader.GetValue(0).Equals(usr) && dreader.GetValue(1).Equals(pswd))
+                {
+                    Console.WriteLine("USERNAME E PASSWORD CORRETTI... REDIRECT");
+                    conn.Close();
+                    dreader.Close();
+                    cmd.Dispose();
+                    Switch();
+                    return;
+
+                }
+
+            }
+
+            error.Content = "USERNAME O PASSWORD ERRATI";
+            Console.WriteLine("USERNAME O PASSWORD ERRATI!");
+        }
+
+        private void Switch()
+        {       
+           var a=new MainWindow(emailText.Text, passwordText.Text);
+            a.Show();
+            this.Close();
+        }
+
+        private void SelectUser()
+        {
+            usr = emailText.Text;
+            pswd = passwordText.Text;
+
             conn.Open();
-
-            // use to perform read and write operations in the database 
-            SqlCommand cmd;
-
-            //use to read a row in table one by one
-            SqlDataReader dreader;
-
-            // to sore SQL command and the output of SQL command 
-            string sql, output = "";
 
             // use to fetch rwos from demo table 
             sql = "Select Email, Password from Utente";
@@ -92,35 +125,6 @@ namespace mio_traduttore_2
 
             // fetch all the rows from the demo table 
             dreader = cmd.ExecuteReader();
-
-            // for one by one reading row 
-            while (dreader.Read())
-            {
-
-                if (dreader.GetValue(0).Equals(usr) && dreader.GetValue(1).Equals(pswd))
-                {
-                    Console.WriteLine("USERNAME E PASSWORD CORRETTI, FAI IL REDIRECT");
-                    Switch();
-                    dreader.Close();
-                    cmd.Dispose();
-                    conn.Close();
-                    return;
-                }
-            }
-
-            // to close all the objects 
-            dreader.Close();
-            cmd.Dispose();
-            conn.Close();
-            error.Content = "USERNAME O PASSWORD ERRATI!";
-            Console.WriteLine("USERNAME O PASSWORD ERRATI!");
-        }
-
-        private void Switch()
-        {       //PASSARE LE VARIABILI USR E PSWD AL MAIN WINDOW
-           var a=new MainWindow(EmailText.Text,PasswordText.Text);
-            a.Show();
-            this.Close();
         }
     }
 }
