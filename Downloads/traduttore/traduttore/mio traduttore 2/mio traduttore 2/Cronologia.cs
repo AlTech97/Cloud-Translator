@@ -10,21 +10,23 @@ namespace mio_traduttore_2
 {
     class Cronologia{
         private String email;
+        // for the connection to sql server database 
+        private SqlConnection conn;
+        private String constr;
+
+        //use to read a row in table one by one
+        private SqlDataReader dreader;
+
+        // use to perform read and write operations in the database 
+        private SqlCommand cmd;
+
+        // to sore SQL command and the output of SQL command 
+        private string sql;
+
 
         public Cronologia(String e)
         {
             email = e;
-        }
-
-        public ArrayList getCronologia()
-        {
-            String[] riga = new String[2];
-            ArrayList risultato= new ArrayList();
-            String constr;
-
-            // for the connection to 
-            // sql server database 
-            SqlConnection conn;
 
             // Data Source is the name of the 
             // server on which the database is stored. 
@@ -36,21 +38,19 @@ namespace mio_traduttore_2
                 User ID=admintraduttore;Password=Settimana1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
             conn = new SqlConnection(constr);
+            
+        }
 
-            conn.Open();
-
-            // use to perform read and write operations in the database 
-            SqlCommand cmd;
-
-            //use to read a row in table one by one
-            SqlDataReader dreader;
-
-            // to sore SQL command and the output of SQL command 
-            string sql;
-
+        public ArrayList getCronologia()
+        {
+            String[] riga = new String[2];          //per conservare una riga di 2 elementi da aggiungere nell'arraylist di righe
+            ArrayList risultato= new ArrayList();
+          
             // Seleziona il testo da tradurre e il testo tradotto dall'utente (identificato con email)
             //e ordina i risultati dal più recente al meno recente
             sql = "SELECT DaTradurre, Tradotto FROM Cronologia WHERE Email = '"+ email +"' ORDER BY timestmp DESC";
+
+            conn.Open();
 
             // to execute the sql statement 
             cmd = new SqlCommand(sql, conn);
@@ -68,8 +68,31 @@ namespace mio_traduttore_2
                 risultato.Add(riga);
 
             }
-            
+            conn.Close();
             return risultato;
+        }
+
+        public bool setCronologia(String email, String daTradurre, String traddotto)
+        {
+            
+            conn.Open();
+            sql = "INSTERT INTO Cronologia (Email, DaTradurre, Tradotto) VAUES('"+ email +"', "+ "'"+ daTradurre + "', "+ "'"+ traddotto +"');" ;
+            cmd = new SqlCommand(sql, conn);
+
+            if (cmd.ExecuteNonQuery() > 0)
+            {
+                conn.Close();
+                return true;
+            }
+            else
+            {
+                conn.Close();
+                return false;
+            }
+
+
+
+            
         }
        
     }
