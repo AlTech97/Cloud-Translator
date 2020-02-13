@@ -76,7 +76,7 @@ namespace mio_traduttore_2
         {
             
             conn.Open();
-            sql = "INSTERT INTO Cronologia (Email, DaTradurre, Tradotto) VAUES('"+ email +"', "+ "'"+ daTradurre + "', "+ "'"+ traddotto +"');" ;
+            sql = "INSERT INTO Cronologia (Email, DaTradurre, Tradotto) VALUES('"+ email +"', "+ "'"+ daTradurre + "', "+ "'"+ traddotto +"');" ;
             cmd = new SqlCommand(sql, conn);
 
             if (cmd.ExecuteNonQuery() > 0)

@@ -346,7 +346,7 @@ namespace mio_traduttore_2
                 string[] s = new string[2];
                 s[0] = a;
                 s[1]=TranslatedTextLabel.Content.ToString();
-
+                cache.setCronologia(email, s[0], s[1]);
                 appoggio.Insert(0, s);
             }
             }
