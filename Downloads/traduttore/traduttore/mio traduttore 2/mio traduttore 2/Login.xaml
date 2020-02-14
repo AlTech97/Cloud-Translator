@@ -6,6 +6,34 @@
         xmlns:local="clr-namespace:mio_traduttore_2"
         mc:Ignorable="d"
         Title="Window1" Height="338" Width="322">
+
+    <Window.Resources>
+        <!-- This style is used for buttons, to remove the WPF default 'animated' mouse over effect -->
+        <Style x:Key="MyButtonStyle" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" 
+                            BorderThickness="1"
+                            Padding="4,2" 
+                            BorderBrush="DarkGray" 
+                            CornerRadius="3" 
+                            Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="Black" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="9*"/>
@@ -18,14 +46,14 @@
         <TextBox x:Name="emailText" HorizontalAlignment="Left" Height="23" Margin="29.888,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" FontSize="14" TabIndex="3" Grid.ColumnSpan="2" Grid.Column="1" Text="antonio@libero.it"/>
         <Label x:Name="PasswordLabel" Content="Password:" HorizontalAlignment="Left" Margin="30.888,115,0,0" VerticalAlignment="Top" FontSize="14" Grid.ColumnSpan="2" Grid.Column="1"/>
 
-        <Button x:Name="LoginButton" Content="Login" HorizontalAlignment="Left" Margin="10,206,0,0" VerticalAlignment="Top" Width="114" Height="31" Click="LogIn" FontSize="14" TabIndex="4" IsDefault="True" Grid.ColumnSpan="2" Grid.Column="1">
+        <Button x:Name="LoginButton" Style="{StaticResource MyButtonStyle}" Content="Login" HorizontalAlignment="Left" Margin="10,206,0,0" VerticalAlignment="Top" Width="114" Height="31" Click="LogIn" FontSize="14" TabIndex="4" IsDefault="True" Grid.ColumnSpan="2" Grid.Column="1" Background="#FFDDDDDD" BorderBrush="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="SignInButton" Content="Sign In" HorizontalAlignment="Left" Margin="67,206,0,0" VerticalAlignment="Top" Width="114" Height="31" FontSize="14" TabIndex="4" IsDefault="True" Grid.Column="2" Click="SignInButton_Click">
+        <Button x:Name="SignInButton" Style="{StaticResource MyButtonStyle}" Content="Sign In" HorizontalAlignment="Left" Margin="67,206,0,0" VerticalAlignment="Top" Width="114" Height="31" FontSize="14" TabIndex="4" IsDefault="True" Grid.Column="2" Click="SignInButton_Click" Background="#FFDDDDDD">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
