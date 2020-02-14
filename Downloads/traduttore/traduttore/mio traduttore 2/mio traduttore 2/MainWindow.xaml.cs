@@ -103,6 +103,8 @@ namespace mio_traduttore_2
                 GetLanguagesForTranslate();
                 // Populate drop-downs with values from GetLanguagesForTranslate
                 PopulateLanguageMenus();
+                // Set user
+                setUser();
 
                 Button_stopRecord.IsEnabled = false;
                 Button_stopRecord.Visibility = Visibility.Collapsed;
@@ -115,6 +117,11 @@ namespace mio_traduttore_2
             Exception e = (Exception)args.ExceptionObject;
             MessageBox.Show("Caught " + e.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             System.Windows.Application.Current.Shutdown();
+        }
+
+        private void setUser()
+        {
+            currentUser.Content = "Current user: " + email;
         }
 
         // ***** POPULATE LANGUAGE MENUS
