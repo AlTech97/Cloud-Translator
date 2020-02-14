@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Navigation;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace mio_traduttore_2
 {
@@ -56,47 +57,54 @@ namespace mio_traduttore_2
 
         private void SignInButton_Click(object sender, RoutedEventArgs e)
         {
-            SelectUser();
-            while (dreader.Read())  //controlla nel DB che l'utente non sia già registrato controllando la sua mail
+            if (SelectUser())
             {
-                if (dreader.GetValue(0).Equals(usr))
+                while (dreader.Read())  //controlla nel DB che l'utente non sia già registrato controllando la sua mail
                 {
-                    error.Content = "UTENTE GIA' REGISTRATO";
-                    return;
+                    if (dreader.GetValue(0).Equals(usr))
+                    {
+                        error.Content = "UTENTE GIA' REGISTRATO";
+                        return;
 
+                    }
                 }
+                //superati i controlli nel DB, inserisci il nuovo utente
+                dreader.Close();
+                sql = "INSERT INTO Utente (Email, Password) VALUES('" + usr + "', '" + pswd + "');";
+
+                // to execute the sql statement 
+                cmd = new SqlCommand(sql, conn);
+
+                cmd.ExecuteNonQuery();
+
+                error.Content = "REGISTRATO, ACCEDI AI SERVIZI";
+
+                conn.Close();
             }
-            //superati i controlli nel DB, inserisci il nuovo utente
-            dreader.Close();
-            sql = "INSERT INTO Utente (Email, Password) VALUES('"+ usr +"', '"+ pswd +"');";
 
-            // to execute the sql statement 
-            cmd = new SqlCommand(sql, conn);
-
-            cmd.ExecuteNonQuery();
-
-            error.Content = "REGISTRATO, ACCEDI AI SERVIZI";
-
-            conn.Close();
+            error.Content = "USERNAME O PASSWORD ERRATI";
+            Console.WriteLine("USERNAME O PASSWORD ERRATI!");
         }
 
         private void LogIn(object sender, RoutedEventArgs e)
         {
-            SelectUser();
-            // for one by one reading row 
-            while (dreader.Read())
+            if (SelectUser())
             {
-                if (dreader.GetValue(0).Equals(usr) && dreader.GetValue(1).Equals(pswd))
+                // for one by one reading row 
+                while (dreader.Read())
                 {
-                    Console.WriteLine("USERNAME E PASSWORD CORRETTI... REDIRECT");
-                    conn.Close();
-                    dreader.Close();
-                    cmd.Dispose();
-                    Switch();
-                    return;
+                    if (dreader.GetValue(0).Equals(usr) && dreader.GetValue(1).Equals(pswd))
+                    {
+                        Console.WriteLine("USERNAME E PASSWORD CORRETTI... REDIRECT");
+                        conn.Close();
+                        dreader.Close();
+                        cmd.Dispose();
+                        Switch();
+                        return;
+
+                    }
 
                 }
-
             }
 
             error.Content = "USERNAME O PASSWORD ERRATI";
@@ -105,15 +113,25 @@ namespace mio_traduttore_2
 
         private void Switch()
         {       
-           var a=new MainWindow(emailText.Text, passwordText.Text);
+           var a=new MainWindow(emailText.Text, passwordBox.Password);
             a.Show();
             this.Close();
         }
 
-        private void SelectUser()
+        private bool SelectUser()
         {
             usr = emailText.Text;
-            pswd = passwordText.Text;
+            pswd = passwordBox.Password;
+
+            Regex regex = new Regex(@"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*"
+            + "@"
+            + @"((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))$");
+            Match match = regex.Match(usr);
+            if (!match.Success)
+            {
+                Console.WriteLine("Email non valida");
+                return false;
+            }
 
             conn.Open();
 
@@ -125,6 +143,8 @@ namespace mio_traduttore_2
 
             // fetch all the rows from the demo table 
             dreader = cmd.ExecuteReader();
+
+            return true;
         }
     }
 }

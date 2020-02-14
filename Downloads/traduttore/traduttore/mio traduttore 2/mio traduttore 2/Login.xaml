@@ -62,7 +62,9 @@
         </Button>
 
         <Label x:Name="EmailLabel" Content=" E-mail:" HorizontalAlignment="Left" Margin="30.888,58,0,0" VerticalAlignment="Top" FontSize="14" Grid.Column="1"/>
-        <TextBox x:Name="passwordText" HorizontalAlignment="Left" Height="23" Margin="30.888,144,0,0"  VerticalAlignment="Top" Width="230" FontSize="14" TabIndex="3" RenderTransformOrigin="0.51,2.423" Grid.ColumnSpan="2" Grid.Column="1" />
+        <PasswordBox x:Name="passwordBox" Margin="30.888,144,0,0" BorderThickness="1" Width="230" Height="23" HorizontalAlignment="Left" VerticalAlignment="Top" PasswordChar="*" FontSize="14" TabIndex="3" RenderTransformOrigin="0.51,2.423" Grid.ColumnSpan="2" Grid.Column="1" MaxLength="16"/>
+        <TextBlock x:Name="statusText" Margin="10" HorizontalAlignment="Center" />
+        <!--<TextBox x:Name="passwordText" HorizontalAlignment="Left" Height="23" Margin="30.888,144,0,0"  VerticalAlignment="Top" Width="230" FontSize="14" TabIndex="3" RenderTransformOrigin="0.51,2.423" Grid.ColumnSpan="2" Grid.Column="1" />-->
         <Label x:Name="error" Content="" HorizontalAlignment="Left" Margin="31,172,0,0" VerticalAlignment="Top" FontSize="14" Grid.ColumnSpan="2" Grid.Column="1" Width="229"/>
 
     </Grid>

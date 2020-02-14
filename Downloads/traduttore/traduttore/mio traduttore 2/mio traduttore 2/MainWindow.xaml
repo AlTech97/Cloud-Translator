@@ -64,7 +64,7 @@
             VerticalAlignment="Top"
             Width="175" FontSize="14" TabIndex="1"/>
         <Label x:Name="TranslatedTextLabel" Content="Translation is displayed here." HorizontalAlignment="Left" Margin="39,353,0,0" VerticalAlignment="Top" Width="620" FontSize="14" Height="85" BorderThickness="0"/>
-        <Label x:Name="DetectedLanguageLabel" Content="Autodetected language is displayed here." HorizontalAlignment="Left" Margin="39,442,0,0" VerticalAlignment="Top" Width="620" FontSize="14" Height="48" BorderThickness="0"/>
+        <Label x:Name="DetectedLanguageLabel" Content="Autodetected language is displayed here." HorizontalAlignment="Left" Margin="39,442,0,0" VerticalAlignment="Top" Width="267" FontSize="14" Height="48" BorderThickness="0"/>
         <Button x:Name="UploadImage" Style="{StaticResource MyButtonStyle}" Content="Load image" HorizontalAlignment="Left" Margin="511,275,0,0" VerticalAlignment="Top" Width="114" Height="31" Click="button1_Click" FontSize="14" TabIndex="4" IsDefault="True" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" Background="#FF49A4FF" Foreground="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" OpacityMask="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" RenderTransformOrigin="0.5,0.5">
             <Button.Resources>
                 <Style TargetType="Border">
@@ -120,12 +120,13 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="login" Content="Log" HorizontalAlignment="Left" Margin="633,322,0,0" VerticalAlignment="Top" Width="26" Height="31" Click="Log" FontSize="14" TabIndex="4" IsDefault="True" RenderTransformOrigin="2.357,0.951" BorderBrush="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}">
+        <Button x:Name="login" HorizontalAlignment="Left" Margin="639,434,0,0" VerticalAlignment="Top" Width="43" Height="46" Click="Log" FontSize="14" TabIndex="4" IsDefault="True" RenderTransformOrigin="2.357,0.951" BorderBrush="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
+            <Image Source="Immagini\User_change.png"/>
         </Button>
 
     </Grid>
