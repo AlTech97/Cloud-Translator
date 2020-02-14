@@ -59,6 +59,7 @@ namespace mio_traduttore_2
         {
             if (SelectUser())
             {
+                error.Content = "";
                 while (dreader.Read())  //controlla nel DB che l'utente non sia già registrato controllando la sua mail
                 {
                     if (dreader.GetValue(0).Equals(usr))
@@ -90,6 +91,7 @@ namespace mio_traduttore_2
         {
             if (SelectUser())
             {
+                error.Content = "";
                 // for one by one reading row 
                 while (dreader.Read())
                 {
@@ -120,6 +122,7 @@ namespace mio_traduttore_2
 
         private bool SelectUser()
         {
+            conn.Close();
             usr = emailText.Text;
             pswd = passwordBox.Password;
 
@@ -130,6 +133,7 @@ namespace mio_traduttore_2
             if (!match.Success)
             {
                 Console.WriteLine("Email non valida");
+                conn.Close();
                 return false;
             }
 
