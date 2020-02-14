@@ -12,13 +12,13 @@
         <Image Source="C:\Users\Fulvio\source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\cloud.png"  HorizontalAlignment="Left" Margin="25,0,0,0" VerticalAlignment="Top" Width="100" Height="70" RenderTransformOrigin="0.5,0.5"/>
         <Label x:Name="label" Content="Cloud Translator" HorizontalAlignment="Left" Margin="246,9,0,0" VerticalAlignment="Top" Height="49" FontSize="26.667"/>
         <TextBox x:Name="TextToTranslate" HorizontalAlignment="Left" Height="36" Margin="42,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="600" FontSize="14" TabIndex="3" TextChanged="TextToTranslate_TextChanged"/>
-        <Label x:Name="CronologiaLabel" Margin="42,201,50,232">
+        <Label x:Name="CronologiaLabel" Margin="42,201,50,220">
             <ListBox Name="Cronologia" SelectionChanged="PrintText" SelectionMode="Single" Height="0" Width="600" VerticalAlignment="Stretch"/>
         </Label>
         <Label x:Name="EnterTextLabel" Content="Text to translate:" HorizontalAlignment="Left" Margin="40,129,0,0" VerticalAlignment="Top" FontSize="14"/>
         <Label x:Name="toLabel" Content="Translate to:" HorizontalAlignment="Left" Margin="304,58,0,0" VerticalAlignment="Top" FontSize="14"/>
 
-        <Button x:Name="TranslateButton" Content="Translate" HorizontalAlignment="Left" Margin="55,269,0,0" VerticalAlignment="Top" Width="114" Height="31" Click="TranslateButton_Click" FontSize="14" TabIndex="4" IsDefault="True" Background="#FF49A4FF" BorderBrush="Black" Foreground="White">
+        <Button x:Name="TranslateButton" Content="Translate" HorizontalAlignment="Left" Margin="54,275,0,0" VerticalAlignment="Top" Width="114" Height="31" Click="TranslateButton_Click" FontSize="14" TabIndex="4" IsDefault="True" Background="#FF49A4FF" BorderBrush="Black" Foreground="White">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
@@ -36,9 +36,9 @@
             Margin="42,88,0,0"
             VerticalAlignment="Top"
             Width="175" FontSize="14" TabIndex="1"/>
-        <Label x:Name="TranslatedTextLabel" Content="Translation is displayed here." HorizontalAlignment="Left" Margin="39,347,0,0" VerticalAlignment="Top" Width="620" FontSize="14" Height="85" BorderThickness="0"/>
-        <Label x:Name="DetectedLanguageLabel" Content="Autodetected language is displayed here." HorizontalAlignment="Left" Margin="40,432,0,0" VerticalAlignment="Top" Width="620" FontSize="14" Height="48" BorderThickness="0"/>
-        <Button x:Name="UploadImage" Content="Load" HorizontalAlignment="Left" Margin="512,269,0,0" VerticalAlignment="Top" Width="114" Height="31" Click="button1_Click" FontSize="14" TabIndex="4" IsDefault="True" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" Background="#FF49A4FF" Foreground="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" OpacityMask="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="TranslatedTextLabel" Content="Translation is displayed here." HorizontalAlignment="Left" Margin="39,353,0,0" VerticalAlignment="Top" Width="620" FontSize="14" Height="85" BorderThickness="0"/>
+        <Label x:Name="DetectedLanguageLabel" Content="Autodetected language is displayed here." HorizontalAlignment="Left" Margin="39,442,0,0" VerticalAlignment="Top" Width="620" FontSize="14" Height="48" BorderThickness="0"/>
+        <Button x:Name="UploadImage" Content="Load image" HorizontalAlignment="Left" Margin="511,275,0,0" VerticalAlignment="Top" Width="114" Height="31" Click="button1_Click" FontSize="14" TabIndex="4" IsDefault="True" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" Background="#FF49A4FF" Foreground="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" OpacityMask="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" RenderTransformOrigin="0.5,0.5">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
@@ -55,7 +55,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Button x:Name="Button_ascolta"  HorizontalAlignment="Left" Margin="460,316,0,0" VerticalAlignment="Top" Width="34" Height="31" Click="ascolta" FontSize="14" TabIndex="4" IsDefault="True" BorderBrush="#FF4AA4FF">
+        <Button x:Name="Button_ascolta"  HorizontalAlignment="Left" Margin="459,322,0,0" VerticalAlignment="Top" Width="34" Height="31" Click="ascolta" FontSize="14" TabIndex="4" IsDefault="True" BorderBrush="#FF4AA4FF">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
@@ -63,7 +63,7 @@
             </Button.Resources>
             <Image Source="C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\audio.png" Height="26" OpacityMask="{DynamicResource {x:Static SystemColors.HotTrackBrushKey}}"></Image>
         </Button>
-        <Button x:Name="Button_startRecord" HorizontalAlignment="Left" Margin="525,316,0,0" VerticalAlignment="Top" Width="34" Height="31" Click="textToSpeech" FontSize="14" TabIndex="4" IsDefault="True">
+        <Button x:Name="Button_startRecord" HorizontalAlignment="Left" Margin="521,324,0,0" VerticalAlignment="Top" Width="34" Height="30" Click="textToSpeech" FontSize="14" TabIndex="4" IsDefault="True">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
@@ -71,7 +71,7 @@
             </Button.Resources>
             <Image Source="C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\mic.png"></Image>
         </Button>
-        <Button x:Name="Button_stopRecord" HorizontalAlignment="Left" Margin="525,316,0,0" VerticalAlignment="Top" Width="34" Height="31" Click="textToSpeech" FontSize="14" TabIndex="4" IsDefault="True" BorderBrush="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}">
+        <Button x:Name="Button_stopRecord" HorizontalAlignment="Left" Margin="521,323,0,0" VerticalAlignment="Top" Width="34" Height="31" Click="textToSpeech" FontSize="14" TabIndex="4" IsDefault="True" BorderBrush="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
@@ -79,21 +79,21 @@
             </Button.Resources>
             <Image Source="C:\Users\Fulvio\Source\Repos\Traduttoregit\Downloads\traduttore\traduttore\mio traduttore 2\stop.png"></Image>
         </Button>
-        <Button x:Name="ButtonSpeech" Content="Car" HorizontalAlignment="Left" Margin="585,316,0,0" VerticalAlignment="Top" Width="26" Height="31" Click="Parla" FontSize="14" TabIndex="4" IsDefault="True" RenderTransformOrigin="2.357,0.951" BorderBrush="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}">
+        <Button x:Name="ButtonSpeech" Content="Car" HorizontalAlignment="Left" Margin="584,322,0,0" VerticalAlignment="Top" Width="26" Height="31" Click="Parla" FontSize="14" TabIndex="4" IsDefault="True" RenderTransformOrigin="2.357,0.951" BorderBrush="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="UploadDocument" Content="Load2" HorizontalAlignment="Left" Margin="288,269,0,0" VerticalAlignment="Top" Width="114" Height="31" Click="button2_Click" FontSize="14" TabIndex="4" IsDefault="True" Background="#FF49A4FF" OpacityMask="Black" Foreground="White" BorderBrush="Black">
+        <Button x:Name="UploadDocument" Content="Load document" HorizontalAlignment="Left" Margin="287,275,0,0" VerticalAlignment="Top" Width="114" Height="31" Click="button2_Click" FontSize="14" TabIndex="4" IsDefault="True" Background="#FF49A4FF" OpacityMask="Black" Foreground="White" BorderBrush="Black">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="login" Content="Log" HorizontalAlignment="Left" Margin="634,316,0,0" VerticalAlignment="Top" Width="26" Height="31" Click="Log" FontSize="14" TabIndex="4" IsDefault="True" RenderTransformOrigin="2.357,0.951" BorderBrush="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}">
+        <Button x:Name="login" Content="Log" HorizontalAlignment="Left" Margin="633,322,0,0" VerticalAlignment="Top" Width="26" Height="31" Click="Log" FontSize="14" TabIndex="4" IsDefault="True" RenderTransformOrigin="2.357,0.951" BorderBrush="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
