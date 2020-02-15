@@ -89,6 +89,9 @@
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
+            <ToolTipService.ToolTip>
+                <Label Content="Speech to text"/>
+            </ToolTipService.ToolTip>
             <Image Source="Immagini\audio.png" Height="26" OpacityMask="{DynamicResource {x:Static SystemColors.HotTrackBrushKey}}"/>
         </Button>
         <Button x:Name="Button_startRecord" HorizontalAlignment="Left" Margin="328,320,0,0" VerticalAlignment="Top" Width="34" Height="30" Click="textToSpeech" FontSize="14" TabIndex="4" IsDefault="True">
@@ -97,6 +100,9 @@
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
+            <ToolTipService.ToolTip>
+                <Label Content="Start record"/>
+            </ToolTipService.ToolTip>
             <Image Source="Immagini\mic.png"></Image>
         </Button>
         <Button x:Name="Button_stopRecord" HorizontalAlignment="Left" Margin="328,320,0,0" VerticalAlignment="Top" Width="34" Height="30" Click="textToSpeech" FontSize="14" TabIndex="4" IsDefault="True" BorderBrush="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}">
@@ -105,6 +111,9 @@
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
+            <ToolTipService.ToolTip>
+                <Label Content="Stop record"/>
+            </ToolTipService.ToolTip>
             <Image Source="Immagini\stop.png"></Image>
         </Button>
         <Button x:Name="ButtonSpeech" Content="Car" HorizontalAlignment="Left" Margin="560,320,0,0" VerticalAlignment="Top" Width="26" Height="31" Click="Parla" FontSize="14" TabIndex="4" IsDefault="True" RenderTransformOrigin="2.357,0.951" BorderBrush="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}">
@@ -127,6 +136,9 @@
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
+            <ToolTipService.ToolTip>
+                <Label Content="Change user"/>
+            </ToolTipService.ToolTip>
             <Image Source="Immagini\User_change.png"/>
         </Button>
 
