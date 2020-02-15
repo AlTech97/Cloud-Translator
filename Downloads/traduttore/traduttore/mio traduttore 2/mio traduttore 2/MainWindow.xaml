@@ -122,6 +122,9 @@
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
+            <ToolTipService.ToolTip>
+                <Label Content="Speech"/>
+            </ToolTipService.ToolTip>
         </Button>
         <Button x:Name="UploadDocument" Style="{StaticResource MyButtonStyle}" Content="Load document" HorizontalAlignment="Left" Margin="287,275,0,0" VerticalAlignment="Top" Width="114" Height="31" Click="button2_Click" FontSize="14" TabIndex="4" IsDefault="True" Background="#FF49A4FF" OpacityMask="Black" Foreground="White" BorderBrush="Black">
             <Button.Resources>
