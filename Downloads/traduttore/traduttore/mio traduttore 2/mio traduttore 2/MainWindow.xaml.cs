@@ -63,6 +63,9 @@ namespace mio_traduttore_2
         // Dictionary to map language codes from friendly name (sorted case-insensitively on language name)antonio@libero.it antopassword
         private SortedDictionary<string, string> languageCodesAndTitles =
             new SortedDictionary<string, string>(Comparer<string>.Create((a, b) => string.Compare(a, b, true)));
+        public static string cammino = @"C:\Users\"+Environment.UserName+"\\Desktop\\";
+            //System.Reflection.Assembly.GetExecutingAssembly().Location.Replace("\\mio traduttore 2\\bin\\x64\\Debug\\mio traduttore 2.exe", "");
+
         /*public MainWindow(String mail,String password) {
             email = mail;
             psw = password;
@@ -592,7 +595,7 @@ namespace mio_traduttore_2
             }
             Console.WriteLine("Language chosen: " + fromLanguage);
 
-            using (var audioInput = AudioConfig.FromWavFileInput(@"C:\Users\lucag\Desktop\system_recorded_audio.wav"))
+            using (var audioInput = AudioConfig.FromWavFileInput(@cammino+"system_recorded_audio.wav"))
             {
                 using (var recognizer = new SpeechRecognizer(config, audioInput))
                 {
@@ -623,7 +626,7 @@ namespace mio_traduttore_2
                     }
                 }
             }
-            File.Delete(@"C:\Users\lucag\Desktop\system_recorded_audio.wav");
+            File.Delete(@cammino+"system_recorded_audio.wav");
         }
         private async void TranslateButton_Click2(String text)
         {
@@ -826,8 +829,8 @@ namespace mio_traduttore_2
         public void StopRecordAudio()
         {
             Console.WriteLine("Stopped recording at " + DateTime.Now);
-
-            record("save recsound C:\\Users\\lucag\\Desktop\\system_recorded_audio.wav", "", 0, 0);
+            Console.WriteLine("Il Path ottenuto è: "+ cammino);
+            record("save recsound "+cammino+"//system_recorded_audio.wav", "", 0, 0);
             record("close recsound", "", 0, 0);
 
             //CaptureInstance.StopRecording();
