@@ -23,6 +23,7 @@ namespace mio_traduttore_2
         // to sore SQL command and the output of SQL command 
         private string sql;
 
+        
 
         public Cronologia(String e)
         {
@@ -45,7 +46,7 @@ namespace mio_traduttore_2
         {
             String[] riga = new String[2];          //per conservare una riga di 2 elementi da aggiungere nell'arraylist di righe
             ArrayList risultato= new ArrayList();
-          
+            String temp1, temp2;
             // Seleziona il testo da tradurre e il testo tradotto dall'utente (identificato con email)
             //e ordina i risultati dal più recente al meno recente
             sql = "SELECT DaTradurre, Tradotto FROM Cronologia WHERE Email = '"+ email +"' ORDER BY timestmp DESC";
@@ -61,10 +62,13 @@ namespace mio_traduttore_2
             //salva i risultati della query in una matrice e restituiscila
             while(dreader.Read())
             {
+                temp1= (String)dreader.GetValue(0); //da tradurre
+                temp2= (String)dreader.GetValue(1);    //tradotto
+
                 riga = new String[2];
-                riga[0] = (String) dreader.GetValue(0); //da tradurre
-                riga[1] = (String)dreader.GetValue(1);    //tradotto
-               
+                riga[0] = temp1.Replace("\"","'");
+                riga[1] = temp2.Replace("\"", "'");
+
                 risultato.Add(riga);
 
             }
@@ -72,11 +76,13 @@ namespace mio_traduttore_2
             return risultato;
         }
 
-        public bool setCronologia(String email, String daTradurre, String traddotto)
+        public bool setCronologia(String email, String daTradurre, String tradotto)
         {
-            
+            var a = daTradurre.Replace("'", "\"");
+            var b = tradotto.Replace("'", "\"");
+
             conn.Open();
-            sql = "INSERT INTO Cronologia (Email, DaTradurre, Tradotto) VALUES('"+ email +"', "+ "'"+ daTradurre + "', "+ "'"+ traddotto +"');" ;
+            sql = "INSERT INTO Cronologia (Email, DaTradurre, Tradotto) VALUES('"+ email +"', "+ "'"+ a + "', "+ "'"+ b +"');" ;
             cmd = new SqlCommand(sql, conn);
 
             if (cmd.ExecuteNonQuery() > 0)
